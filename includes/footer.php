@@ -103,10 +103,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="src/js/footer.js?v=<?= time(); ?>"></script>
-<?php
-include "../security/config.php";
-include "../security/project-security.php";
-?>
 </body>
 
 </html>
