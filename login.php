@@ -298,9 +298,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
         });
     </script>
-<?php
-include "../security/config.php";
-include "../security/project-security.php";
-?>
+
 </body>
 </html>
