@@ -1,0 +1,839 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Phudu:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+    background-color: #1f1f1f;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Überschriften mit Bricolage Grotesque im Condensed-Stil */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter Tight", sans-serif;    font-weight: 800;
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+/* Update CSS variables */
+}
+}
+.menu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #1a1a1a;
+}
+.menu-list a {
+    color: #fff;
+    background-color: #1a1a1a;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+.menu-list a:hover {
+    background-color: rgba(43, 43, 43, 0.7); /* Dunkler, halbtransparenter Hintergrund */
+    backdrop-filter: blur(8px); /* Blur-Effekt */
+    border-radius: 13px;
+}
+.menu-list a.is-active {
+    color: #fa7109;
+    border-radius: 13px;
+    background: rgba(49, 49, 49, 0.7);
+    backdrop-filter: blur(8px); /* Blur-Effekt */
+    
+}
+.main-content {
+margin-left: 250px;
+padding: 40px;
+padding-bottom: 100px; /* Zusätzlicher Platz am unteren Rand für den Player */
+flex: 1;
+background: linear-gradient(to bottom, #2c2c2c 10%, #1f1f1f 50%, #1a1a1a 80%);
+}
+
+/* Station Card */
+.station-card {
+    background-color: rgba(31, 31, 31, 0.7); /* Dunkler, halbtransparenter Hintergrund */
+    backdrop-filter: blur(8px); /* Blur-Effekt */
+    border: 1px solid #333333; /* Leichte graue Border */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.station-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgba(31, 31, 31, 0.8); /* Hintergrund bei Hover etwas undurchsichtiger */
+}
+
+/* Thumbnail */
+.station-logo {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Card Content */
+.station-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.station-card-content .title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.station-card-content .subtitle {
+    font-size: 0.875rem;
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+}
+
+
+/* Qiuk Access */
+.favorites-quick-access {
+    max-height: 200px; /* Maximale Höhe */
+    overflow-y: auto; /* Scrollbar aktivieren */
+    padding-right: 5px; /* Abstand zur Scrollbar */
+    scrollbar-width: thin; /* Dünne Scrollbar (für Firefox) */
+    scrollbar-color: #888 #222; /* Scrollbar-Farben (für Firefox) */
+}
+
+.favorites-quick-access::-webkit-scrollbar {
+    width: 8px; /* Breite der Scrollbar (für WebKit-Browser) */
+}
+
+.favorites-quick-access::-webkit-scrollbar-thumb {
+    background-color: #888; /* Farbe des Scrollbalkens */
+    border-radius: 4px; /* Abgerundete Kanten */
+}
+
+.favorites-quick-access::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Farbe bei Hover */
+}
+
+.favorites-quick-access .favorite-card {
+    background-color: rgba(31, 31, 31, 0.7); /* Dunkler, halbtransparenter Hintergrund */
+    backdrop-filter: blur(8px); /* Blur-Effekt */
+    border: 1px solid #333333; /* Leichte graue Border */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px; /* Innenabstand */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.favorites-quick-access .favorite-card:hover {
+    background-color: rgba(31, 31, 31, 0.9); /* Weniger transparent bei Hover */
+}
+
+.favorites-quick-access .play-button {
+    background-color: #ffffff; /* Weißer Hintergrund */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.favorites-quick-access .play-button:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0; /* Hellere Farbe bei Hover */
+}
+
+
+
+/* Footer Section */
+.station-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Owner Info */
+.owner-info {
+    font-size: 0.875rem;
+}
+
+.owner-info a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.owner-info a:hover {
+    color: #fa7109;
+}
+
+/* Buttons */
+.station-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.play-button,
+.favorite-button {
+    background-color: #ffffff; /* Weißer Hintergrund für Buttons */
+    color: #292b2f;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-button:hover,
+.favorite-button:hover {
+    background-color: #f0f0f0; /* Hellere Farbe bei Hover */
+    transform: scale(1.1);
+}
+
+.play-button i,
+.favorite-button i {
+    font-size: 1.2rem;
+}
+
+
+/* Station Owner Styling */
+.station-owner {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #cccccc; /* Dezentes Grau passend zum Design */
+}
+
+/* Owner-Link Styling */
+/* Owner-Link Styling */
+.owner-link {
+    color: #fff; /* Weiß für Sichtbarkeit */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.owner-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%; /* Weniger horizontaler Abstand */
+    height: 140%; /* Mehr vertikales Padding */
+    background-color: rgba(255, 255, 255, 0.1); /* Halbtransparenter Hintergrund */
+    border-radius: 8px; /* Abgerundete Ecken */
+    backdrop-filter: blur(4px); /* Blur-Effekt */
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.owner-link:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05); /* Sanfte Vergrößerung beim Hover */
+}
+
+.owner-link:hover {
+    color: #fff; /* Beibehaltung der weißen Farbe beim Hover */
+}
+
+/* Owner-Link Styling */
+.station-owner-link {
+    font-size: 0.8em; /* Kleinere Schriftgröße */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.station-owner-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%; /* Weniger horizontaler Abstand */
+    height: 140%; /* Mehr vertikales Padding */
+    background-color: rgba(255, 255, 255, 0.1); /* Halbtransparenter Hintergrund */
+    border-radius: 8px; /* Abgerundete Ecken */
+    backdrop-filter: blur(4px); /* Blur-Effekt */
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.station-owner-link:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05); /* Sanfte Vergrößerung beim Hover */
+}
+
+.station-owner-link:hover {
+    color: #fff; /* Beibehaltung der weißen Farbe beim Hover */
+}
+
+/* Hover-Effekt für die Station Card */
+.station-card:hover {
+    border-color: rgba(255, 255, 255, 0.3); /* Etwas stärkerer weißer Rand bei Hover */
+    background-color: rgba(44, 44, 44, 0.8); /* Weniger Transparenz bei Hover */
+}
+
+.station-logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.mini-player {
+background-color: #2c2c2c;
+padding: 10px 20px;
+position: fixed;
+bottom: 0;
+left: 250px;
+right: 0;
+border-top: 1px solid #444;
+}
+
+
+
+footer .buttons .button {
+    border-radius: 50px;
+}
+/* Suchleisten-Container */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(31, 31, 31, 0.7); 
+    backdrop-filter: blur(8px); 
+    border-radius: 30px;
+    border: 1px solid rgba(85, 85, 85, 0.6); /* Unauffällige graue Border */
+    padding: 5px;
+    width: 350px;
+    transition: border-color 0.3s ease;
+}
+
+/* Suchfeld */
+.search-input {
+    flex: 1;
+    padding: 8px 10px 8px 40px; /* Kleinere Höhe */
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 13px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.search-input::placeholder {
+    color: #bbb;
+}
+
+/* Weißer Rahmen bei Eingabe */
+.search-input:focus {
+    border-color: #fff;
+}
+
+.search-container:focus-within {
+    border-color: #fff; /* Weißer Rand um den Container, wenn das Suchfeld fokussiert ist */
+}
+
+/* Such-Icon im Suchfeld */
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #bbb;
+    font-size: 18px;
+}
+
+/* Such-Button rechts im Suchfeld */
+.search-button {
+    background-color: rgba(68, 68, 68, 0.8); /* Durchsichtiges Dunkelgrau */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    margin-left: 8px;
+    margin-right: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: rgba(85, 85, 85, 0.8); /* Etwas helleres Grau bei Hover */
+}
+
+/* Button-Icon */
+.search-button i {
+    font-size: 16px; /* Leicht kleinere Icon-Größe für kompakteren Look */
+}
+
+
+/* Mobile Menü */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .mini-player {
+        left: 0;
+    }
+    .navbar-burger {
+        display: block;
+        color: white;
+    }
+    #navbarMenu {
+        display: block;
+    }
+}
+/* Desktop - Navbar verstecken */
+@media (min-width: 769px) {
+    .navbar {
+        display: none;
+    }
+}
+        /* Für mobile Geräte */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding-bottom: 200px; /* Mehr Platz für mobile Geräte */
+    }
+    .mini-player {
+        left: 0;
+        padding-bottom: 60px; /* Abstand für die Bottom Bar */
+    }
+}
+
+    /* Mobile-Geräte: Verstecken des Suchfelds und Benutzerbereichs */
+    @media (max-width: 768px) {
+        .hide-on-mobile {
+            display: none !important;
+        }
+    }
+
+
+/* Overlay für den gesamten Bildschirm */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.6); /* Halbtransparenter Hintergrund */
+    backdrop-filter: blur(10px); /* Blur-Effekt für das Overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Loader-Animation */
+.loader {
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Äußere, halbtransparente Farbe */
+    border-left-color: #ffffff; /* Weiße Vorderseite für den Effekt */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spin-Animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Loader aktivieren */
+.loader-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal-Box anpassen */
+.modal-box-custom {
+    background: #2D2A2A; /* Hellgrau */
+    border: 1px solid #4f4f4f; /* Leichte Border */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 20px;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Schatten */
+}
+
+/* X-Button oben rechts */
+.modal-close-custom {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e0e0e0; /* Grau */
+    color: #333; /* Dunkelgrau */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 50%; /* Runde Form */
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close-custom:hover {
+    background: #d6d6d6; /* Etwas dunkler beim Hover */
+    color: #000; /* Schwarz beim Hover */
+}
+
+/* Modal-Hintergrund */
+.modal-background {
+    background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+}
+
+/* Modal-Hintergrund */
+.btn-login {
+    background: #fff;
+    color: #000;
+}
+
+#persistent-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Überlagert den Seiteninhalt */
+    background-color: #222; /* Player-Hintergrundfarbe */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+#page-content {
+    padding-bottom: 80px; /* Platz für den Player schaffen */
+}
+
+/* Container */
+.recommended-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+/* Recommended Card */
+.recommended-card {
+    display: flex;
+    flex: 2;
+    background: rgba(31, 31, 31, 0.7); 
+    backdrop-filter: blur(8px); 
+    border-radius: 16px;
+    color: white;
+    overflow: hidden;
+    position: relative; /* Notwendig für das Pseudo-Element */
+    max-width: 60%;
+    height: 250px;
+}
+
+.recommended-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px; /* Gleiche Radius wie das Haupt-Element */
+    padding: 2px; /* Border-Dicke */
+    background: linear-gradient(45deg, #ff6f01, #8b3e02, #ff4500, #ffd700); /* Farbverlauf */
+    background-size: 300% 300%; /* Größerer Hintergrund für flüssige Animation */
+    animation: animateBorder 3s linear infinite; /* Animation anwenden */
+    z-index: 1; /* Über dem Hintergrund */
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.recommended-card > * {
+    position: relative; /* Inhalte über der animierten Border */
+    z-index: 2;
+}
+
+/* Animation für den Border-Farbverlauf */
+@keyframes animateBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.recommended-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recommended-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ff6f01;
+}
+
+.recommended-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.recommended-subtitle {
+    font-size: 16px;
+    color: #CCC;
+    margin: 10px 0;
+}
+
+.recommended-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.recommended-buttons .play-button, .recommended-buttons .favorite-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.recommended-buttons .play-button:hover, .recommended-buttons .favorite-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.recommended-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    margin: 10px;
+    overflow: hidden;
+    height: calc(100% - 20px); /* Passt sich der Höhe an */
+    width: 50%; /* Breite, um sie innerhalb der Karte zu halten */
+    display: block; /* Sichert, dass es ein Blockelement ist */
+}
+
+
+/* Playlist Card */
+.playlist-card {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    background: linear-gradient(135deg, #73401f, #3c3837);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 40%;
+    height: 250px; /* Höhere Karte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Playlist Image */
+.playlist-image {
+    flex: 0 0 40%; /* 40% der Breite für das Bild */
+    height: calc(100% - 20px); /* Passt sich der Höhe an */
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    margin: 10px;
+    width: 50%; /* Breite, um sie innerhalb der Karte zu halten */
+}
+
+/* Playlist Content */
+.playlist-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Subtitle (ganz oben) */
+.playlist-subtitle {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    flex-shrink: 0; /* Fixiert den Subtitle */
+}
+
+/* Title (in der Mitte) */
+.playlist-header {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: left;
+    flex-grow: 1; /* Wächst, um den mittleren Bereich auszufüllen */
+    display: flex;
+    align-items: center; /* Vertikale Ausrichtung in der Mitte */
+}
+
+/* Description (in der Mitte unter dem Titel) */
+.playlist-description {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 15px;
+    opacity: 0.9;
+    line-height: 1.4;
+    text-align: left;
+    flex-grow: 1; /* Füllt den Platz zwischen Subtitle und Button */
+}
+
+/* Button (ganz unten) */
+.playlist-button {
+    margin-top: auto; /* Schiebt den Button nach unten */
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.playlist-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .recommended-section {
+        flex-direction: column;
+    }
+
+    .recommended-card, .playlist-card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .recommended-card {
+        width: 500px;
+        flex-direction: column;
+    }
+    .playlist-card {
+        width: 500px;
+        flex-direction: column;
+    }
+    .recommended-image {
+        height: 200px;
+    }
+}
+
+/* Filterbereich Styling */
+.custom-select {
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.custom-select:focus {
+    background-color: #333;
+    color: white;
+    border-color: white;
+}
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+.select-container::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+}
+
+.podcast-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Abstand zwischen den Elementen */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Author Badge */
+.author-badge {
+    display: inline-block;
+    background: rgba(31, 31, 31, 0.7); /* Halbtransparenter Hintergrund */
+    backdrop-filter: blur(8px); /* Blur-Effekt */
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Episode Count */
+.episode-count {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
+
+
