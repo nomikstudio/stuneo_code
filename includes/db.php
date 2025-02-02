@@ -4,9 +4,9 @@ date_default_timezone_set('Europe/Berlin'); // Zeitzone für MEZ (GMT+1)
 
 // Datenbankverbindungsdetails
 $host = 'localhost';
-$db   = 'u761114744_stuneo'; // Dein Datenbankname
-$user = 'u761114744_stuneo'; // Dein Datenbank-Benutzername
-$pass = 'stuneo_2024%Dominik'; // Dein Datenbank-Passwort
+$db   = 'radio_app'; // Dein Datenbankname
+$user = 'root'; // Dein Datenbank-Benutzername
+$pass = ''; // Dein Datenbank-Passwort
 $charset = 'utf8mb4';
 
 // DSN für die PDO-Verbindung
