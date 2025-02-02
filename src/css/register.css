@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Phudu:wght@300..900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #D35400 10%, #803401 50%, #000 100%); /* Gradient von der oberen linken Ecke */
+    transition: background 2s ease-in-out; /* Weicher Übergang bei Änderungen */
+}
+
+
+/* Überschriften mit Bricolage Grotesque im Condensed-Stil */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Phudu", serif;
+    font-weight: 900; /* Condensed Gewicht, anpassen je nach Stil */
+}
+
+p {
+   font-family: "Inter", sans-serif;
+}
+
+/* Labels linksbündig */
+.registration-container .label {
+    text-align: left; /* Links ausrichten */
+    display: block; /* Block-Display, damit das Label eine neue Zeile beginnt */
+    font-weight: bold; /* Optional: fett für bessere Sichtbarkeit */
+    margin-bottom: 5px; /* Optional: Abstand zwischen Label und Eingabefeld */
+}
+/* Registrierung Container */
+.registration-container {
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border für den Container */
+}
+
+.hidden {
+    display: none;
+}
+.registration-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.registration-container input {
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+}
+
+.registration-container input:focus {
+    background-color: #333; /* Eingabefelder bleiben beim Schreiben weiß */
+    color: white;
+    border-color: white; /* Weiße Border beim Fokus */
+}
+
+.registration-container input::placeholder {
+    color: #aaa;
+}
+
+.registration-container button {
+    width: 100%;
+    background-color: white; /* Weiß gefüllter Button */
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+        /* Icons weiß machen */
+.icon.is-left, .icon.is-right {
+    color: white;
+}
+
+.icon.is-right {
+    position: absolute; /* Positioniere das rechte Icon absolut */
+    right: 10px; /* Abstand vom rechten Rand */
+    top: 50%; /* Vertikale Zentrierung */
+    margin-top: 7px;
+}
+/* Icons auch beim Fokus auf das Eingabefeld weiß lassen */
+.field .control input:focus + .icon.is-left, 
+.field .control input:focus ~ .icon.is-right {
+    color: white; /* Icon-Farbe bleibt weiß beim Schreiben */
+}
+
+/* Style für die Select-Felder */
+.registration-container select {
+margin-bottom: 15px;
+background-color: #333;
+border: 1px solid #555;
+color: white;
+width: 100%;
+padding: 10px;
+border-radius: 4px;
+-webkit-appearance: none; /* Entfernt das Standard-Dropdown-Symbol in Webkit-Browsern */
+-moz-appearance: none; /* Entfernt das Standard-Dropdown-Symbol in Firefox */
+appearance: none; /* Entfernt das Standard-Dropdown-Symbol in modernen Browsern */
+font-size: 16px;
+font-family: 'Inter', sans-serif;
+outline: none;
+cursor: pointer;
+}
+
+/* Placeholder-ähnlicher Text für das erste Element im Select */
+.registration-container select option:first-child {
+color: #aaa;
+}
+
+/* Fokus-Stil für Select-Felder */
+.registration-container select:focus {
+background-color: #333;
+color: white;
+border-color: white; /* Weiße Border beim Fokus */
+}
+
+/* Pfeil-Symbol anpassen für Select */
+.registration-container select::-ms-expand { /* Entfernt das Pfeilsymbol in Internet Explorer */
+display: none;
+}
+
+/* Anpassung für einen zusätzlichen Pfeil als Icon */
+.registration-container .select-icon {
+position: absolute;
+right: 15px;
+top: calc(50% - 5px); /* Vertikale Zentrierung */
+color: white;
+pointer-events: none;
+}
+
+/* Select-Container für relative Positionierung */
+.select-container {
+position: relative;
+width: 100%;
+}
+.links {
+    font-size: 0.9rem;
+    color: #fff;
+}
+.links a {
+    color: #fff;
+    text-decoration: underline;
+}

@@ -1,0 +1,367 @@
+/* Grundlegende Einstellungen für den Player */
+.fixed-player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(46, 46, 46, 0.8);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #666;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+/* Verstecke Player, wenn Overlay aktiv ist */
+.fixed-player.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Fortschrittsbalken */
+.progress-bar {
+    height: 3px;
+    background-color: #9b4dca;
+    width: 0%;
+    transition: width 0.2s;
+}
+
+/* Player-Inhalte */
+.content {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Steuerungstasten */
+.controls .control-button,
+.additional-controls .control-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.control-button:hover,
+.control-button:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    outline: none;
+}
+
+#playIcon, #pauseIcon {
+    font-size: 1.9em;
+}
+
+.station-info {
+    display: flex;
+    align-items: center;
+}
+
+.station-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.station-text .song-title, .station-text .station-email {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.station-text .station-email {
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+/* Lautstärke- und Favoritensteuerung */
+.volume-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#volumeSlider {
+    width: 100px;
+    -webkit-appearance: none;
+    height: 4px;
+    background: #FF6F00;
+    outline: none;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+#volumeSlider:hover {
+    opacity: 1;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Moderner, minimalistischer Overlay-Stil */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(24, 54, 54), rgb(12, 33, 33));
+    backdrop-filter: blur(20px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: #ffffff;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.3s ease;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.overlay-logo {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.overlay-artist {
+    font-size: 18px;
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+/* Station Owner Information */
+.overlay-owner-info {
+    font-size: 20px;
+    color: #bbbbbb;
+    margin-top: 15px;
+}
+
+.overlay-owner-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Overlay-Steuerungselemente */
+.overlay-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.overlay-controls .control-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.overlay-controls .control-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Fixierter Schließen-Button */
+.close-button {
+    position: fixed; /* Fixiert im Viewport */
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 1200; /* Sicherstellen, dass er über allem liegt */
+}
+
+/* Mobile Version */
+@media (max-width: 768px) {
+    .fixed-player {
+        padding: 8px 10px;
+    }
+
+    /* Station links, Controls zentriert, weitere Steuerungen rechts */
+    .content {
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+    }
+
+    .station-info {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .controls {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px; /* Verkleinert den Abstand zwischen Next- und Previous-Buttons */
+    }
+
+    .additional-controls {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    /* Verstecke Lautstärkeregler */
+    .volume-controls {
+        display: none;
+    }
+
+    .station-logo-img {
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .controls .control-button,
+    .additional-controls .control-button {
+        font-size: 1.2rem;
+        padding: 6px;
+    }
+
+    #playIcon, #pauseIcon {
+        font-size: 2.3rem;
+    }
+
+    .overlay-logo {
+        width: 200px;
+    }
+
+    .overlay-title {
+        font-size: 20px;
+    }
+
+    .overlay-artist {
+        font-size: 13px;
+    }
+}
+
+/* Tooltip Styling */
+.station-owner-link {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%; /* Positioniert das Tooltip über dem Icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(60, 60, 60, 0.85); /* Grauer Hintergrund mit Transparenz */
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(5px); /* Leichter Blur-Effekt */
+    border: 1px solid rgba(150, 150, 150, 0.5); /* Grauer Rand */
+    z-index: 10;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;    
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(60, 60, 60, 0.85) transparent transparent transparent;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+/* Tooltip sichtbar machen bei Hover */
+.station-owner-link:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.loader_player {
+    position: absolute; /* Überlagert das Icon */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 53px; /* Größe des Loaders */
+    height: 53px; /* Größe des Loaders */
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Halbtransparenter Rand */
+    border-top: 3px solid white; /* Deckender Rand für Animation */
+    border-radius: 50%; /* Kreisform */
+    animation: spin 1s linear infinite; /* Rotationsanimation */
+    z-index: 2; /* Über dem Icon */
+}
+
+/* Rotationsanimation */
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

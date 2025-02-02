@@ -1,0 +1,59 @@
+    /* Modal Hintergrund für Blur */
+    .modal-background {
+        background-color: rgba(43, 43, 43, 0.8); /* dunkler Hintergrund mit leichter Transparenz */
+        backdrop-filter: blur(8px); /* Blur-Effekt */
+    }
+
+    .modal-card {
+        max-width: 500px;
+        border-radius: 8px;
+        background-color: rgba(43, 43, 43, 0.9); /* Transparent mit Player-Hintergrundfarbe */
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Dezenter weißer Rahmen */
+    }
+
+    .modal-card-head {
+        background-color: #444;
+        border-bottom: 1px solid #555;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .modal-card-title {
+        color: #ffffff;
+    }
+
+    .modal-card-body {
+        color: #ffffff;
+    }
+
+    .input.is-light {
+        background-color: rgba(51, 51, 51, 0.8); /* Transparente Farbe */
+        color: #fff;
+        border: 1px solid #555;
+        border-radius: 5px;
+    }
+
+    .button.is-primary {
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        border: 1px solid #555;
+        transition: background-color 0.3s ease;
+    }
+
+    .button.is-primary:hover {
+        background-color: #555;
+    }
+        /* Sidebar-Styling */
+        .menu-bottom {
+            padding-top: 20px;
+            margin-bottom: 70px;
+        }
+            /* Modal-Fenster Styling */
+            .modal-card {
+            max-width: 500px;
+        }
+        /* Zusätzlicher Abstand in Electron */
+        .electron-mode .app {
+            padding-top: 20px; /* Erhöhe den Abstand für Electron */
+        }

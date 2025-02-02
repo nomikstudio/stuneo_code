@@ -1,0 +1,112 @@
+/* Standard-Eingabefeld */
+.input {
+    background-color: rgba(49, 49, 49, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid #505050;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+/* Placeholder-Text */
+.input::placeholder {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+/* Eingabefeld beim Fokus */
+.input:focus {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #bfbfbf;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fa7109;
+
+}
+.input:focus::placeholder {
+    color: #000;
+}
+
+/* Icon in der Eingabefeld */
+.icon.is-left {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+.field .control input:focus + .icon.is-left {
+    color: black;
+}
+
+/* Weißer Button */
+.button.is-white {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.button.is-white:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Pricing Card */
+.pricing-card {
+    background-color: rgba(44, 44, 44, 0.6); /* Halbtransparenter Hintergrund */
+    backdrop-filter: blur(10px); /* Blur-Effekt */
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.1); /* Weiche, unauffällige Border */
+    margin-top: 20px;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
+}
+.pricing-card:hover {
+    background-color: rgba(44, 44, 44, 0.8); /* Weniger Transparenz bei Hover */
+}
+
+/* Player Icon: eigene Klasse hinzufügen, um Konflikte zu vermeiden */
+.player-icon {
+    font-size: 1.3333em !important; /* Sicherstellen, dass die Icon-Größe korrekt bleibt */
+}
+
+/* Button-Icon - Standardgröße */
+.button i {
+    font-size: 16px;
+}
+
+.custom-select {
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.electron-mode .version {
+    display: none; /* Erhöhe den Abstand für Electron */
+}
+
+.custom-select:focus {
+    background-color: #333;
+    color: white;
+    border-color: white;
+}
+
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+.select-container::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+}

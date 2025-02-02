@@ -1,0 +1,26 @@
+
+/* Genre-Tabs */
+.tabs.is-toggle ul {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tabs.is-toggle li a {
+    background-color: #555555;
+    color: #fff;
+    border: 1px solid #636363;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.tabs.is-toggle li.is-active a,
+.tabs.is-toggle li:hover a {
+    background-color: #fff;
+    color: #1a1a1a;
+    border: 1px solid #636363;
+    font-weight: bold;
+}

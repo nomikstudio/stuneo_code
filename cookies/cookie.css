@@ -1,0 +1,218 @@
+/* Cookie Banner Style */
+.cookie-banner {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 80%;
+    max-width: 400px;
+    padding: 1rem;
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    z-index: 9999; /* Standardwert für den Cookie-Banner */
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    animation: slide-up 0.5s ease-out;
+}
+
+/* Einblende-Animation */
+@keyframes slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Text Section */
+.cookie-text {
+    text-align: left; /* Text linksbündig */
+    font-size: 0.9rem; /* Kleinere Schriftgröße */
+}
+
+.cookie-title {
+    font-size: 1rem; /* Kleinere Überschrift */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.4rem; /* Weniger Abstand */
+}
+
+.cookie-text p {
+    margin: 0;
+    line-height: 1.4; /* Kompakterer Zeilenabstand */
+}
+
+/* Link Style */
+.cookie-link {
+    color: #66b3ff;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.cookie-link:hover {
+    color: #4da3e7;
+}
+
+/* Button Section */
+.cookie-buttons {
+    display: flex;
+    justify-content: space-between; /* Buttons gleichmäßig verteilen */
+    gap: 0.5rem; /* Geringerer Abstand zwischen Buttons */
+}
+
+.cookie-buttons .button {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent angepasst an den Banner */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtile weiße Umrandung */
+    border-radius: 8px;
+    padding: 8px 16px; /* Kleinere Polsterung */
+    font-size: 0.85rem; /* Kleinere Schriftgröße */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex: 1; /* Buttons gleiche Breite wie der Banner */
+    text-align: center;
+}
+
+.cookie-buttons .button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Leicht heller bei Hover */
+    color: #ffffff; /* Weiße Schrift bleibt */
+    border-color: rgba(255, 255, 255, 0.6); /* Umrandung deutlicher */
+}
+
+.cookie-buttons .button:active {
+    transform: scale(0.98); /* Leichte Skalierung bei Klick */
+}
+
+/* Verstecken des Banners */
+#cookie-banner {
+    display: none; /* Standardmäßig ausgeblendet */
+}
+
+/* Erweiterte Styles für DSGVO */
+.cookie-options {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Mehr Abstand zwischen den Optionen */
+}
+
+.cookie-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.cookie-options label input {
+    width: 16px;
+    height: 16px;
+    accent-color: #66b3ff; /* Blaue Checkbox */
+    cursor: pointer;
+}
+
+
+
+/* Cookie Modal */
+.cookie-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: #1e1e1e; /* Dark Grey Hintergrund */
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+    z-index: 10001; /* Höher als der Banner */
+    animation: fade-in 0.4s ease-in;
+    display: none; /* Standardmäßig ausgeblendet */
+    flex-direction: column;
+    gap: 1rem;
+    position: relative; /* Für den "X"-Button */
+}
+
+/* Modal sichtbar */
+.cookie-modal.show {
+    display: flex; /* Modal wird sichtbar */
+}
+
+/* "X"-Button oben rechts */
+.cookie-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cookie-modal-close:hover {
+    color: #66b3ff;
+}
+
+/* Modal-Titel */
+.cookie-modal-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal-Buttons */
+.cookie-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.cookie-modal-buttons .button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+}
+
+.cookie-modal-buttons .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.cookie-modal-buttons .button:active {
+    transform: scale(0.98);
+}
+
+/* Einblende-Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+

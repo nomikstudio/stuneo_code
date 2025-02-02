@@ -1,0 +1,60 @@
+.custom-input {
+    background-color: rgba(50, 50, 50, 0.7);
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    color: white;
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    transition: border 0.3s ease, color 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: white;
+    color: white;
+}
+
+.control:hover .icon, 
+.control:focus-within .icon {
+    color: white;
+}
+
+.custom-select {
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.custom-select:focus {
+    background-color: #333;
+    color: white;
+    border-color: white;
+}
+
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+.select-container::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+}
+
+.label {
+    color: #ffffff;
+}
+.field .control input:focus + .icon.is-left {
+color: white;
+}

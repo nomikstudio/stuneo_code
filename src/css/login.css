@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Phudu:wght@300..900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+/* Überschriften mit Bricolage Grotesque im Condensed-Stil */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Phudu", serif;
+    font-weight: 900; /* Condensed Gewicht, anpassen je nach Stil */
+}
+
+p {
+   font-family: "Inter", sans-serif;
+}
+
+.login-container {
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border für die Loginbox */
+}
+.login-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.login-container input {
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+}
+.login-container input:focus {
+    background-color: #333; /* Eingabefelder bleiben beim Schreiben weiß */
+    color: white;
+    border-color: white; /* Weiße Border beim Fokus */
+}
+.login-container input::placeholder {
+    color: #aaa;
+}
+.login-container button {
+    width: 100%;
+    background-color: white; /* Weiß gefüllter Button */
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+.login-container .social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.login-container .social-login a {
+    display: inline-block;
+    width: 32%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.login-container .social-login a.google {
+    background-color: #DB4437;
+}
+.login-container .social-login a.facebook {
+    background-color: #4267B2;
+}
+.login-container .social-login a.apple {
+    background-color: #333;
+}
+/* Icons weiß machen */
+.icon.is-left, .icon.is-right {
+    color: white;
+}
+/* Eye-Icon klickbar und weiß */
+.icon.is-right {
+    position: absolute;
+    right: 10px; /* Platzierung sicherstellen */
+    top: 10px;
+    cursor: pointer;
+}
+/* Icons auch beim Fokus auf das Eingabefeld weiß lassen */
+.field .control input:focus + .icon.is-left, 
+.field .control input:focus ~ .icon.is-right {
+    color: white; /* Icon-Farbe bleibt weiß beim Schreiben */
+}
+.links {
+    font-size: 0.9rem;
+    color: #fff;
+}
+.links a {
+    color: #fff;
+    text-decoration: underline;
+}

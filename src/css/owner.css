@@ -1,0 +1,85 @@
+/* Logo-Bereich */
+.card-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px; /* Logo rechts positionieren */
+    bottom: 20px; /* Abstand vom unteren Rand */
+}
+
+@media (max-width: 768px) {
+    .card-logo {
+        width: 80px; /* Verkleinert für mobile Geräte */
+        height: 80px;
+        right: 10px; /* Weniger Abstand für mobile Ansicht */
+        bottom: 10px;
+    }
+}
+
+.owner {
+    background-color: rgba(50, 50, 50, 0.4); 
+    color: #eee; 
+    border-radius: 8px; 
+    padding: 20px;
+    padding-right: 110px; /* Platz für das Logo einplanen */
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .owner {
+        padding-right: 90px; /* Weniger Platz für kleinere Bildschirme */
+        padding-left: 10px; /* Weniger Innenabstand für bessere Lesbarkeit */
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 8px; /* Kleiner Abstand zwischen den Icons */
+    margin-top: 15px; /* Abstand zum vorherigen Text */
+    align-items: flex-start; /* Links ausgerichtet */
+}
+
+.social-link {
+    font-size: 1.2em; /* Kleinere Icons */
+    color: #fff; /* Standardfarbe bleibt Weiß */
+    text-decoration: none; /* Entfernt Underline */
+    position: relative;
+    transition: transform 0.3s ease; /* Nur Größe animieren */
+}
+
+.social-link:hover {
+    transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
+}
+
+.social-link[title]::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 110%; /* Position über dem Icon */
+    left: 0;
+    background-color: rgba(30, 30, 30, 0.9); /* Dunkler Hintergrund */
+    color: #e0e0e0; /* Hellgrauer Text */
+    padding: 4px 8px; /* Kleiner Padding */
+    border-radius: 4px; /* Runde Ecken */
+    border: 1px solid #555; /* Subtiler grauer Rahmen */
+    white-space: nowrap; /* Verhindert Umbrüche */
+    font-size: 0.7em; /* Kleine Schriftgröße */
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(3px); /* Leichter Blur-Effekt */
+    pointer-events: none; /* Verhindert Interaktion mit dem Tooltip */
+}
+
+.social-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+

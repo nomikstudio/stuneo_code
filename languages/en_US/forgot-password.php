@@ -1,0 +1,22 @@
+<?php
+return [
+    'error_enter_email' => 'Please enter your email address.',
+    'error_email_not_found' => 'No account found with that email address.',
+    'error_email_not_sent' => 'There was an error sending the email. Please try again later.',
+    'error_email_not_sent_with_reason' => 'There was an error sending the email. Reason: {reason}',
+    'success_email_sent' => 'A password reset link has been sent to your email address.',
+    'email_subject' => 'Password Reset Request',
+    'email_title' => 'Password Reset Request',
+    'email_body' => 'We received a request to reset your password. Click the button below to reset it.',
+    'reset_button' => 'Reset Password',
+    'email_disclaimer' => 'If you did not request this, you can safely ignore this email.',
+    'best_regards' => 'Best regards,',
+    'all_rights_reserved' => 'All rights reserved.',
+    'visit_website' => 'Website',
+    'page_title' => 'Forgot Password',
+    'instruction_text' => 'Please enter your email address to receive a password reset link.',
+    'email_placeholder' => 'Email address',
+    'submit_button' => 'Send Reset Link',
+    'error_title' => 'Error',
+    'success_title' => 'Success',
+];

@@ -1,0 +1,85 @@
+ /* Navbar-Layout und Farben */
+ .mobile-navbar {
+    background-color: #2c2c2c;
+    color: #fff;
+    border-top: 1px solid #444;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-navbar .logo-text {
+    color: #ffffff;
+    font-size: 25px;
+    font-family: 'Phudu', serif;
+    font-weight: 800;
+    padding: 5px 15px;
+    letter-spacing: 0;
+}
+
+.navbar-menu {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar-Item Styling */
+.mobile-navbar .navbar-item {
+    background-color: #2c2c2c;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 10px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Icons und Text in Navbar-Items */
+.mobile-navbar .navbar-item i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Hover- und Aktiver Status für Navbar-Items */
+.mobile-navbar .navbar-item.active,
+.mobile-navbar .navbar-item:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Burger-Menü Styling */
+.mobile-navbar .navbar-burger span {
+    background-color: #bbb;
+    height: 2px;
+}
+
+/* Hover-Effekt für Burger-Menü */
+.mobile-navbar .navbar-burger:hover span {
+    background-color: #ffffff;
+}
+
+/* Minimalistischer Stil ohne Schatten */
+.mobile-navbar .navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Button rechts ausrichten */
+.mobile-navbar .buttons {
+    margin-left: auto; /* Schiebt den Button nach rechts */
+    margin-right: 10px;
+}
+
+/* Button-Design */
+.mobile-navbar .buttons .btn-login {
+    background-color: white;
+    color: #000;
+    text-decoration: none; /* Entfernt Link-Styling */
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-navbar .buttons .btn-login:hover {
+    background-color: #f5f5f5; /* Dunklerer Blau-Ton beim Hover */
+    color: #000;
+}

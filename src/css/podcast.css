@@ -1,0 +1,115 @@
+/* Allgemeines Styling für die Progress Bar */
+#progress-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background-color: #666;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fortschrittsbalken (Highlight) */
+#progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #fa7109;
+  width: calc(var(--progress, 0%) * 1%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Punkt (Slider-Thumb) */
+#progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #fa7109;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+
+#progress-bar::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background-color: #fa7109;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+
+/* Styling für die Audio-Volume-Kontrolle */
+#volume-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 5px;
+  background-color: #666;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Punkt für Volume Control */
+#volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #774723;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#volume-control::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background-color: #774723;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #fa7109;
+  width: 0%; /* Dynamische Breite */
+  transition: width 0.3s ease;
+}
+.is-hidden {
+  display: none;
+}
+
+.toggle-description {
+  color: #ffffff;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.toggle-description:hover {
+  background: rgba(31, 31, 31, 0.9);
+}
+

@@ -1,0 +1,57 @@
+.station-logo {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.station-logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.favorites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.all-favorites-link {
+    color: #bbb;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.all-favorites-link:hover {
+    color: #fff;
+}
+
+/* Live-Suchcontainer */
+.live-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    z-index: 10;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Einzelnes Suchergebnis */
+.live-search-results .result-item {
+    padding: 10px 15px;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+}
+
+.live-search-results .result-item:hover {
+    background-color: #333;
+}
